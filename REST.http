@@ -1,18 +1,18 @@
 # get all jobs
-GET http://localhost:3000/jobs
+GET https://vue-course-2024-traversy-media-backend-fcgqb3dhetekh7bd.canadaeast-01.azurewebsites.net/jobs
 
 ###
 
 # get job by id
-GET http://localhost:3000/jobs/5
+GET https://vue-course-2024-traversy-media-backend-fcgqb3dhetekh7bd.canadaeast-01.azurewebsites.net/jobs/5
 
 ###
 # delete job by id
-DELETE http://localhost:3000/jobs/5
+DELETE https://vue-course-2024-traversy-media-backend-fcgqb3dhetekh7bd.canadaeast-01.azurewebsites.net/jobs/5
 
 ###
 # create a new job
-POST http://localhost:3000/jobs
+POST https://vue-course-2024-traversy-media-backend-fcgqb3dhetekh7bd.canadaeast-01.azurewebsites.net/jobs
 Content-Type: application/json
 
 {
@@ -31,7 +31,7 @@ Content-Type: application/json
 
 ###
 # update job 5
-PUT http://localhost:3000/jobs/5
+PUT https://vue-course-2024-traversy-media-backend-fcgqb3dhetekh7bd.canadaeast-01.azurewebsites.net/jobs/5
 Content-Type: application/json
 
 {

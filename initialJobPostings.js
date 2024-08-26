@@ -75,7 +75,7 @@ const initialJobPostings = [
 		type: 'Full-Time',
 		description: 'Join our team as a Front-End Developer in beautiful Portland, OR...',
 		location: 'Portland, OR',
-		salary: '$100K - $110K',
+		salary: '$100K - $125K',
 		company: {
 			name: 'Port Solutions INC',
 			description: 'Port Solutions is a leading technology company specializing in software development and digital marketing...',

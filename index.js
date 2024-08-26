@@ -46,7 +46,9 @@ app.get('/jobs/:id', (req, res) => {
 // POST /jobs - Create a new job
 app.post('/jobs', (req, res) => {
 	const newJob = req.body
-	newJob.id = req.session.jobPostings.length + 1
+	// find the max id and increment by 1
+	maxId = Math.max(...req.session.jobPostings.map((job) => job.id))
+	newJob.id = maxId + 1
 	req.session.jobPostings.push(newJob)
 	res.status(201).json(newJob)
 })
