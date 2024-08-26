@@ -1,0 +1,88 @@
+const initialJobPostings = [
+	{
+		id: 1,
+		title: 'Senior Vue Developer',
+		type: 'Full-Time',
+		description: 'We are seeking a talented Front-End Developer to join our team in Boston, MA...',
+		location: 'Boston, MA',
+		salary: '$70K - $80K',
+		company: {
+			name: 'NewTek Solutions',
+			description: 'NewTek Solutions is a leading technology company specializing in web development...',
+			contactEmail: 'contact@teksolutions.com',
+			contactPhone: '555-555-5555',
+		},
+	},
+	{
+		id: 2,
+		title: 'Front-End Engineer (Vue)',
+		type: 'Full-Time',
+		description: 'Join our team as a Front-End Developer in sunny Miami, FL...',
+		location: 'Miami, FL',
+		salary: '$70K - $80K',
+		company: {
+			name: 'Veneer Solutions',
+			description: 'Veneer Solutions is a creative agency specializing in digital design and development...',
+			contactEmail: 'contact@loremipsum.com',
+			contactPhone: '555-555-5555',
+		},
+	},
+	{
+		id: 3,
+		title: 'Vue.js Developer',
+		type: 'Full-Time',
+		description: 'Are you passionate about front-end development? Join our team in vibrant Brooklyn, NY...',
+		location: 'Brooklyn, NY',
+		salary: '$70K - $80K',
+		company: {
+			name: 'Dolor Cloud',
+			description: 'Dolor Cloud is a leading technology company specializing in digital solutions for businesses...',
+			contactEmail: 'contact@dolorsitamet.com',
+			contactPhone: '555-555-5555',
+		},
+	},
+	{
+		id: 4,
+		title: 'Vue Front-End Developer',
+		type: 'Part-Time',
+		description: 'Join our team as a Part-Time Front-End Developer in beautiful Phoenix, AZ...',
+		location: 'Phoenix, AZ',
+		salary: '$60K - $70K',
+		company: {
+			name: 'Alpha Elite',
+			description: 'Alpha Elite is a dynamic startup specializing in digital marketing and web development...',
+			contactEmail: 'contact@adipisicingelit.com',
+			contactPhone: '555-555-5555',
+		},
+	},
+	{
+		id: 5,
+		title: 'Full Stack Vue Developer',
+		type: 'Full-Time',
+		description: 'Exciting opportunity for a Full-Time Front-End Developer in bustling Atlanta, GA...',
+		location: 'Atlanta, GA',
+		salary: '$90K - $100K',
+		company: {
+			name: 'Browning Technologies',
+			description: 'Browning Technologies is a rapidly growing technology company specializing in e-commerce solutions...',
+			contactEmail: 'contact@consecteturadipisicing.com',
+			contactPhone: '555-555-5555',
+		},
+	},
+	{
+		id: 6,
+		title: 'Vue Native Developer',
+		type: 'Full-Time',
+		description: 'Join our team as a Front-End Developer in beautiful Portland, OR...',
+		location: 'Portland, OR',
+		salary: '$100K - $110K',
+		company: {
+			name: 'Port Solutions INC',
+			description: 'Port Solutions is a leading technology company specializing in software development and digital marketing...',
+			contactEmail: 'contact@ipsumlorem.com',
+			contactPhone: '555-555-5555',
+		},
+	},
+]
+
+module.exports = initialJobPostings;

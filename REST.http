@@ -1,0 +1,49 @@
+# get all jobs
+GET http://localhost:3000/jobs
+
+###
+
+# get job by id
+GET http://localhost:3000/jobs/5
+
+###
+# delete job by id
+DELETE http://localhost:3000/jobs/5
+
+###
+# create a new job
+POST http://localhost:3000/jobs
+Content-Type: application/json
+
+{
+    "title": "test add new job",
+    "type": "test add new job",
+    "description": "test add new job",
+    "location": "test add new job",
+    "salary": "test add new job",
+    "company": {
+        "name": "Port Solutions INC",
+        "description": "Port Solutions is a leading technology company specializing in software development and digital marketing...",
+        "contactEmail": "contact@ipsumlorem.com",
+        "contactPhone": "555-555-5555"
+    }
+}
+
+###
+# update job 5
+PUT http://localhost:3000/jobs/5
+Content-Type: application/json
+
+{
+    "title": "upteste test",
+    "type": "upteste test",
+    "description": "upteste test",
+    "location": "upteste test",
+    "salary": "upteste test",
+    "company": {
+        "name": "Port Solutions INC",
+        "description": "Port Solutions is a leading technology company specializing in software development and digital marketing...",
+        "contactEmail": "",
+        "contactPhone": ""
+    }
+}
