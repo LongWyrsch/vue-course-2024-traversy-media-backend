@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const session = require('express-session')
 require('dotenv').config()
 const cors = require('cors')
+const helmet = require('helmet')
 const { config } = require('./constants.js');
 
 const initialJobPostings = require('./initialJobPostings')
@@ -18,8 +19,14 @@ var corsOptions = {
 	optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 // Needed because the POST request has custom header to send JSON object
-// app.options('*', cors(corsOptions));
+app.options('*', cors(corsOptions));
 app.use(cors(corsOptions));
+
+// Helmet for security-related HTTP headers
+app.use(helmet());
+
+// Trust first proxy
+app.set('trust proxy', 1); // I don't know what this does.
 
 app.use(bodyParser.json())
 app.use(
@@ -41,10 +48,6 @@ app.use((req, res, next) => {
 
 // GET /jobs - Get all jobs
 app.get('/jobs', (req, res) => {
-	// log the cookie
-	console.log(req.headers.cookie)
-	// log the session id
-	console.log(req.session.id)
 	res.json(req.session.jobPostings)
 })
 

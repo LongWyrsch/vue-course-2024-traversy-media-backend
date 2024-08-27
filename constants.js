@@ -1,11 +1,11 @@
 const production = {
 	client_url: 'https://red-glacier-069a5080f.5.azurestaticapps.net',
-	cookie: null
-	// cookie: {
-	// 	sameSite: 'none',
-	// 	secure: true,
-	// 	maxAge: 1000 * 60 * 60 * 24 * 7, //One week
-	// }
+	// cookie: null
+	cookie: {
+		sameSite: 'none',
+		secure: true,
+		maxAge: 1000 * 60 * 60 * 24 * 7, //One week
+	}
 };
 
 const development = {
