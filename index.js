@@ -1,14 +1,25 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const session = require('express-session')
-const initialJobPostings = require('./initialJobPostings')
+require('dotenv').config()
+const cors = require('cors')
+const { config } = require('./constants.js');
 
-if (process.env.NODE_ENV !== 'production') {
-	require('dotenv').config()
-}
+const initialJobPostings = require('./initialJobPostings')
 
 const app = express()
 const port = process.env.PORT || 3000
+
+var corsOptions = {
+	credentials: true,
+	preflightContinue: true,
+	methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+	origin: config.client_url,
+	optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+// Needed because the POST request has custom header to send JSON object
+// app.options('*', cors(corsOptions));
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json())
 app.use(
@@ -16,7 +27,7 @@ app.use(
 		secret: process.env.SESSION_SECRET, // Use an environment variable for the session secret
 		resave: false,
 		saveUninitialized: true,
-		cookie: { secure: false },
+		cookie: config.cookie,
 	})
 )
 
@@ -30,6 +41,10 @@ app.use((req, res, next) => {
 
 // GET /jobs - Get all jobs
 app.get('/jobs', (req, res) => {
+	// log the cookie
+	console.log(req.headers.cookie)
+	// log the session id
+	console.log(req.session.id)
 	res.json(req.session.jobPostings)
 })
 
