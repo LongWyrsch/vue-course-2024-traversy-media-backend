@@ -4,7 +4,7 @@ const session = require('express-session')
 require('dotenv').config()
 const cors = require('cors')
 const helmet = require('helmet')
-const { config } = require('./constants.js');
+const { config } = require('./constants.js')
 
 const initialJobPostings = require('./initialJobPostings')
 
@@ -17,16 +17,16 @@ var corsOptions = {
 	methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 	origin: config.client_url,
 	optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
+}
 // Needed because the POST request has custom header to send JSON object
-app.options('*', cors(corsOptions));
-app.use(cors(corsOptions));
+app.options('*', cors(corsOptions))
+app.use(cors(corsOptions))
 
 // Helmet for security-related HTTP headers
-app.use(helmet());
+app.use(helmet())
 
 // Trust first proxy
-app.set('trust proxy', 1); // I don't know what this does.
+app.set('trust proxy', 1) // Indicate that the server is behind a proxy (like a load balancer) it should trust.
 
 app.use(bodyParser.json())
 app.use(
